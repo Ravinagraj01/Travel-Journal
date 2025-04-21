@@ -1,0 +1,111 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Future Destinations - Travel Journal</title>
+    <link rel="stylesheet" href="styles.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
+</head>
+<body>
+    <div class="container">
+        <header>
+            <div class="header-top">
+                <h1>Future Destinations</h1>
+                <button id="themeToggle" class="theme-toggle">
+                    <i class="fas fa-moon"></i>
+                </button>
+            </div>
+            <p>Plan your next adventures and dream destinations</p>
+        </header>
+
+        <nav class="main-nav">
+            <ul>
+                <li><a href="index.html"><i class="fas fa-home"></i> Home</a></li>
+                <li><a href="wishlist.html" class="active"><i class="fas fa-map-marked-alt"></i> Future Destinations</a></li>
+                <li><a href="packing.html"><i class="fas fa-suitcase"></i> Packing List</a></li>
+            </ul>
+        </nav>
+
+        <div class="wishlist-page">
+            <div class="wishlist-header">
+                <div class="wishlist-stats">
+                    <div class="stat-card">
+                        <i class="fas fa-globe"></i>
+                        <h3>Total Destinations</h3>
+                        <p id="totalDestinations">0</p>
+                    </div>
+                    <div class="stat-card">
+                        <i class="fas fa-calendar-check"></i>
+                        <h3>Upcoming Trips</h3>
+                        <p id="upcomingTrips">0</p>
+                    </div>
+                </div>
+                <button id="addDestinationBtn" class="btn-primary">
+                    <i class="fas fa-plus"></i> Add New Destination
+                </button>
+            </div>
+
+            <div class="wishlist-filters">
+                <input type="text" id="searchDestination" placeholder="Search destinations...">
+                <select id="filterByDate">
+                    <option value="all">All Dates</option>
+                    <option value="upcoming">Upcoming</option>
+                    <option value="past">Past</option>
+                </select>
+            </div>
+
+            <div class="wishlist-container">
+                <div id="wishlistItems" class="wishlist-items">
+                    <!-- Wishlist items will be added here -->
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- Modal for adding/editing destinations -->
+    <div id="destinationModal" class="modal">
+        <div class="modal-content">
+            <span class="close">&times;</span>
+            <h2 id="modalTitle">Add New Destination</h2>
+            <form id="destinationForm">
+                <div class="form-group">
+                    <label for="destinationName">Destination Name</label>
+                    <input type="text" id="destinationName" required>
+                </div>
+                <div class="form-group">
+                    <label for="destinationCountry">Country</label>
+                    <input type="text" id="destinationCountry" required>
+                </div>
+                <div class="form-group">
+                    <label for="plannedDate">Planned Date</label>
+                    <input type="date" id="plannedDate" required>
+                </div>
+                <div class="form-group">
+                    <label for="destinationImage">Image</label>
+                    <input type="file" id="destinationImage" accept="image/*">
+                </div>
+                <div class="form-group">
+                    <label for="destinationNotes">Notes</label>
+                    <textarea id="destinationNotes" rows="4"></textarea>
+                </div>
+                <div class="form-group">
+                    <label for="priority">Priority</label>
+                    <select id="priority">
+                        <option value="high">High</option>
+                        <option value="medium">Medium</option>
+                        <option value="low">Low</option>
+                    </select>
+                </div>
+                <div class="form-actions">
+                    <button type="submit" class="btn-primary">Save Destination</button>
+                    <button type="button" class="btn-secondary" id="cancelBtn">Cancel</button>
+                </div>
+            </form>
+        </div>
+    </div>
+
+    <script src="wishlist.js"></script>
+    <script src="script.js"></script>
+</body>
+</html> 

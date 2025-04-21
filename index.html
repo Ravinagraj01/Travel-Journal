@@ -1,0 +1,112 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Travel Journal</title>
+    <link rel="stylesheet" href="styles.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
+</head>
+<body>
+    <div class="container">
+        <header>
+            <div class="header-top">
+                <h1>My Travel Journal</h1>
+                <button id="themeToggle" class="theme-toggle">
+                    <i class="fas fa-moon"></i>
+                </button>
+            </div>
+            <p>Capture your adventures, one memory at a time</p>
+        </header>
+
+        <nav class="main-nav">
+            <ul>
+                <li><a href="index.html" class="active"><i class="fas fa-home"></i> Home</a></li>
+                <li><a href="wishlist.html"><i class="fas fa-map-marked-alt"></i> Future Destinations</a></li>
+                <li><a href="packing.html"><i class="fas fa-suitcase"></i> Packing List</a></li>
+            </ul>
+        </nav>
+
+        <div class="statistics-dashboard">
+            <div class="stat-card">
+                <i class="fas fa-globe-americas"></i>
+                <h3>Countries Visited</h3>
+                <p id="countriesCount">0</p>
+            </div>
+            <div class="stat-card">
+                <i class="fas fa-city"></i>
+                <h3>Cities Explored</h3>
+                <p id="citiesCount">0</p>
+            </div>
+            <div class="stat-card">
+                <i class="fas fa-calendar-alt"></i>
+                <h3>Total Entries</h3>
+                <p id="entriesCount">0</p>
+            </div>
+        </div>
+
+        <div class="add-entry-container">
+            <button id="addEntryBtn" class="btn-primary">
+                <i class="fas fa-plus"></i> Add New Entry
+            </button>
+        </div>
+
+        <div class="timeline">
+            <div id="entriesContainer" class="entries-container">
+                <!-- Entries will be dynamically added here -->
+            </div>
+        </div>
+    </div>
+
+    <!-- Modal for adding/editing entries -->
+    <div id="entryModal" class="modal">
+        <div class="modal-content">
+            <span class="close">&times;</span>
+            <h2 id="modalTitle">Add New Travel Entry</h2>
+            <form id="entryForm">
+                <div class="form-group">
+                    <label for="entryDate">Date</label>
+                    <input type="date" id="entryDate" required>
+                </div>
+                <div class="form-group">
+                    <label for="entryTitle">Title</label>
+                    <input type="text" id="entryTitle" required>
+                </div>
+                <div class="form-group">
+                    <label for="entryCountry">Country</label>
+                    <input type="text" id="entryCountry" required>
+                </div>
+                <div class="form-group">
+                    <label for="entryCity">City</label>
+                    <input type="text" id="entryCity" required>
+                </div>
+                <div class="form-group">
+                    <label for="entryImage">Image</label>
+                    <input type="file" id="entryImage" accept="image/*" required>
+                </div>
+                <div class="form-group">
+                    <label for="entryDescription">Description</label>
+                    <div class="editor-toolbar">
+                        <button type="button" class="toolbar-btn" data-command="bold">
+                            <i class="fas fa-bold"></i>
+                        </button>
+                        <button type="button" class="toolbar-btn" data-command="italic">
+                            <i class="fas fa-italic"></i>
+                        </button>
+                        <button type="button" class="toolbar-btn" data-command="underline">
+                            <i class="fas fa-underline"></i>
+                        </button>
+                    </div>
+                    <div id="entryDescription" class="rich-text-editor" contenteditable="true"></div>
+                </div>
+                <div class="form-actions">
+                    <button type="submit" class="btn-primary">Save Entry</button>
+                    <button type="button" class="btn-secondary" id="cancelBtn">Cancel</button>
+                </div>
+            </form>
+        </div>
+    </div>
+
+    <script src="script.js"></script>
+</body>
+</html>
